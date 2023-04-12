@@ -1,0 +1,46 @@
+{
+  "name": "@wingriders/apply-params-to-script",
+  "version": "0.1.0",
+  "author": "TechRiderWR <techrider@wingriders.com>",
+  "license": "ISC",
+  "description": "Simple WASM wrapper around uplc's `apply_params_to_script` function",
+  "type": "module",
+  "main": "./dist/umd/index.js",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "node": "./dist/node/index.cjs",
+      "import": "./dist/es/index.js",
+      "default": "./dist/cjs/index.cjs"
+    },
+    "./apply_params_to_script.wasm": "./dist/apply_params_to_script_bg.wasm",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -Rf src/pkg dist",
+    "build:wasm": "wasm-pack build -t web -d ../src/pkg crate",
+    "build:rollup": "rollup -c",
+    "build": "yarn clean && yarn build:wasm && yarn build:rollup",
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WingRiders/apply-params-to-script.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@rollup/plugin-wasm": "^6.1.2",
+    "@types/node": "^18.15.11",
+    "@wingriders/cab": "^1.5.0",
+    "cbor": "^8.1.0",
+    "rollup": "^3.21.0",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4",
+    "vitest": "^0.30.1"
+  }
+}

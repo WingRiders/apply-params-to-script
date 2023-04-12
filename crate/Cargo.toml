@@ -1,0 +1,14 @@
+[package]
+name = "apply-params-to-script"
+version = "0.1.0"
+authors = ["TechRiderWR <techrider@wingriders.com>"]
+description = "Simple WASM wrapper around uplc's `apply_params_to_script` function"
+repository = "https://github.com/WingRiders/apply-params-to-script"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+uplc = "0.0.29"
+wasm-bindgen = "0.2.84"
