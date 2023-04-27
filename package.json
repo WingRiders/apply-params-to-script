@@ -1,6 +1,6 @@
 {
   "name": "@wingriders/apply-params-to-script",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "TechRiderWR <techrider@wingriders.com>",
   "license": "ISC",
   "description": "Simple WASM wrapper around uplc's `apply_params_to_script` function",
